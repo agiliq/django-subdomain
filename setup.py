@@ -1,17 +1,30 @@
-import ez_setup
-ez_setup.use_setuptools()
+import os
 from setuptools import setup, find_packages
 
 setup(
-    name="django-subdomain",
-    version="0.1",
-    packages=['subdomains'],
-    package_data={'subdomains': ['templates/*.html', 
-                                 'templates/subdomains/*.html'],
-                 },
+    name='django-subdomains',
+    description='app to provide subdomain functionality in django project',
+    keywords='django, subdomains',
+    packages=find_packages(),
+    include_package_data=True,
     zip_safe=False,
+    version="1.1",
     author="Agiliq Solutions",
     author_email="hello@agiliq.com",
-    description="app to provide subdomain functionality in django project",
-    url="http://agiliq.com/",
+    classifiers = ['Development Status :: 4 - Beta',
+                   'Environment :: Web Environment',
+                   'Framework :: Django',
+                   'Intended Audience :: Developers',
+                   'License :: OSI Approved :: GNU General Public License (GPL)',
+                   'Operating System :: OS Independent',
+                   'Programming Language :: Python',
+                   'Topic :: Internet :: WWW/HTTP',
+                   'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+                   'Topic :: Internet :: WWW/HTTP :: WSGI',
+                   'Topic :: Software Development :: Libraries :: Application Frameworks',
+                   'Topic :: Software Development :: Libraries :: Python Modules',
+                   ],
+    url="http://www.agiliq.com/",
+    license="BSD",
+    platforms=["all"],
 )

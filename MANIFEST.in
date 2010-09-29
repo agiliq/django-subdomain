@@ -1,0 +1,4 @@
+include README
+include LICENSE
+include subdomains/templates/subdomains/base.html
+include subdomains/templates/subdomains/create_subdomain.html
