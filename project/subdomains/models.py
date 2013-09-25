@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ImproperlyConfigured
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 
 class SubdomainSettingsNotAvailable(Exception):
     pass
@@ -71,7 +72,7 @@ class Subdomain(models.Model):
             try:
                 app_label, model_name = settings.SUBDOMAIN_SETTINGS_MODULE.split('.')
                 model = models.get_model(app_label, model_name)
-                self._settings_cache = model._default_manager.get(subdomain__id__exact=self.id)
+                self._settings_cache = model._default_manager.get(id__exact=self.id)
             except (ImportError, ImproperlyConfigured):
                 raise SubdomainSettingsNotAvailable
         return self._settings_cache

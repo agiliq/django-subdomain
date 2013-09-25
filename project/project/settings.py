@@ -102,6 +102,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'subdomains.middleware.GetSubdomainMiddleware',
+    'subdomains.middleware.ThreadLocals' ,
+    'subdomains.middleware.RedirectOnInvalidSubdomain',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -168,3 +171,5 @@ LOGGING = {
         },
     }
 }
+SUBDOMAIN_SETTINGS_MODULE = 'subdomains.Subdomain'
+REGISTER_SUBDOMAIN_REDIRECT = '/'

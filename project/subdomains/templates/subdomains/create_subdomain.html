@@ -1,7 +1,7 @@
 {% extends 'subdomains/base.html' %}
 
 {% block content %}
-  <form method='post' class='form'>
+  <form method='post'>
     {% csrf_token %}
     <table>
       {{ subdomain_form }}

@@ -17,8 +17,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', subdomainform),  
-    url(r'^submit/', create_subdomain, name='subdomain_form'),
+    url(r'^', subdomainform, name='index'),
+    url(r'^submit/', create_subdomain, name='subdomains_create_subdomain'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

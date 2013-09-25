@@ -4,7 +4,7 @@
  <div style="padding-left:320px;">
   <h1>Create a subdomain</h1>
   <p>&nbsp;</p>
-  <form method='post' class='form' action={% url 'subdomain_form' %}>
+  <form method='post' class='form' action={% url 'subdomains_create_subdomain' %}>
     {% csrf_token %}
     <table>
       {{ form }}
