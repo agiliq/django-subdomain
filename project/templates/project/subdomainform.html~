@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div style="padding-left:290px;">
+  <h1>Create a subdomain</h1>
+  <p>&nbsp;</p>
+  <form method='post' class='form' action={% url 'subdomain_form' %}>
+    {% csrf_token %}
+    <table>
+      {{ form }}
+      <tr>
+        <td> &nbsp; </td>
+        <td> <input class="btn" type='submit' value='Create' /> </td>
+      </tr>
+    </table>
+  </form>
+ </div> 
+{% endblock content %}

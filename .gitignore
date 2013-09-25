@@ -1,1 +1,13 @@
 *.pyc
+*.log
+*.tmp
+*.swp
+*~
+*#*
+*pydev*
+localsettings.py
+*.tmp*~
+*CACHE*
+media/
+build/
+*.db

@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <title>{% block title %}Create Subdomain {% endblock %}</title>
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+       body 
+         {
+            padding-top:60px;
+         }
+    </style>
+</head>
+
+<body>
+	{% block content %}
+    {% endblock %}
+</body>
+</html>    
