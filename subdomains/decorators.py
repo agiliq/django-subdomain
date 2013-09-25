@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.utils.http import urlquote
 from django.contrib.auth import REDIRECT_FIELD_NAME
+# from conf.settings import MAIN_SITE, BASE_DOMAIN
 
 class ensure_has_subdomain(object):
     def __init__(self, func):
@@ -12,18 +13,19 @@ class ensure_has_subdomain(object):
         if request.subdomain:
             return self.func(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse(settings.REGISTER_SUBDOMAIN_REDIRECT))
+            # return HttpResponseRedirect(reverse(settings.REGISTER_SUBDOMAIN_REDIRECT))
+            return HttpResponseRedirect(reverse('index'))
         
 class ensure_is_main_subdomain(object):
     def __init__(self, func):
         self.func = func
         
     def __call__(self, request, *args, **kwargs):
-        if request.main_site:
+        if 'main_site' in request:
             return self.func(request, *args, **kwargs)
         else:
-            url = 'http://%s.%s%s' % (settings.MAIN_SITE[0], settings.BASE_DOMAIN, '')
-            return HttpResponseRedirect(reverse(settings.REGISTER_SUBDOMAIN_REDIRECT))
+            # url = 'http://%s.%s%s' % (MAIN_SITE[0], BASE_DOMAIN, '')
+            return HttpResponseRedirect(reverse('index'))
             
 
 def request_passes_test(test_func, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME):
