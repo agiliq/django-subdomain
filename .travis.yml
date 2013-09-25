@@ -3,23 +3,8 @@ language: python
 python:
 - 2.7
 
-env:
-  global:
-#  Email Host Username
-  - secure: "J4EX0xrc1oOolTE2RBpRorCMdAbx6C0sQ/KRsdonaBWBk+YGo5wjgfSqUy8nnh7zaEbJTIzCa5UXN/3XfUi794QOendoEH8rog0zSRFITwsuIg6gJ1tKVFaG/SMwHmEOXYe7hNGGak/tThxufFliV/3xyOgBLMqkOFnorXEhZBs="
-#  Email Host Password  
-  - secure: "kk+fQk0HStFtn4skKgkMiCEO3ucgLKrbBwZUHDpN7ChFpdTjlXA4vDWkHKIwOEIML1a8ELdVO88XULgS3nYtJUdHrC1Emm1WIFHs3/yj85UiWj0mzKNyLT/UH813bq0ugdc6Novqntk5gTTK/Uv879uemmoWoqUD/aqel/Znst8="
-#  MERCHANT_API_KEY
-  - secure: "s+DEGXJ2soZBFGe9vvzd8R5U96vdW7SPBwDjB0YfWSxeJtEAJtxB4Abasoi5hLNWr8mYDZBbd82/0RVAat1hhm15a7vKEe1DM44kPKL6hMfo4+PPVTHPUJpQ2Q6VaFMEaNQ/WDidJ306OMXrqmithZjfqqRWRL7JL5rMtqqR3Hs="
-# MERCHANT_PUBLISHABLE_KEY  
-  - secure: "RR8nV2oBl8BTLS6V4e3sXknFiWL7nIcjuh478fghQcvZfYXC9GUgvZd2yepBPrT/oGSTrbdcJR4vRMH5gt/eWvwie+IN+TOM/o57liQt48uFmEm5m4W4eZVhy819ozBMekP8Sly+MyRG1OxMl1hc0t9g1xtMONshzvnCGMERJU8="
-# EBS_ACCOUNT_ID  
-  - secure: "I1R2I88pgy9PCwJ0HVYLdovy1wnNp6zsLJrtRRnn0tKzIAWzlew4pLbaR/hgl2Zuo0Ld4HFhdu9xqHhTkn8lQvF4R4vbGvZTt6VJ4LzIJZIXIsPy+20nNVSUhK8dJwCtugBn743xGuwCqtRgC7K37JGEvYJfHoDjRaZrwcyU2GI="
-# EBS_SECRET_KEY  
-  - secure: "s/rfRQwFsPvprlcAgSnDL1yj3adPMQXyem+ybkxuNzBrAFj2OZd+7S9Eok8XIbhI+bOaz/mnBIg8XMVwi6kpiCWvnapBAhlMnWxJLTZY2Q8u+NehpIviwZpysmjSS896P4MuyFGyBXTi2LSZqdCikqDkBDL6o2FFpIBX7PZtQbk="
-
 install:
-- pip install -r requirements/base.txt --use-mirrors
+- pip install -r project/requirements.txt --use-mirrors
 
 script:
-- python manage.py test books people --settings=fund_raiser.settings.testsettings
+- python project/manage.py  test subdomains
