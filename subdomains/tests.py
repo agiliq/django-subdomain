@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
+from django.test.client import RequestFactory
 
 import unittest
 
 from subdomains.models import Subdomain, SubdomainSettingsNotAvailable
-from subdomains.requestfactory import RequestFactory
 from subdomains.middleware import GetSubdomainMiddleware
 from subdomains.context_processors import populate_subdomain
 from subdomains.decorators import ensure_has_subdomain, ensure_is_main_subdomain
